@@ -73,10 +73,14 @@ def recipes_ratings_merged_cleaned():
             return '0-5'
         elif 5 < n_ingredients <= 10:
             return '5-10'
-        elif 10 < n_ingredients <= 20:
-            return '10-20'
-        elif 20 < n_ingredients <= 30:
-            return '20-30'
+        elif 10 < n_ingredients <= 15:
+            return '10-15'
+        elif 15 < n_ingredients <= 20:
+            return '15-20'
+        elif 20 < n_ingredients <= 25:
+            return '20-25'
+        elif 25 < n_ingredients <= 30:
+            return '25-30'
         elif 30 < n_ingredients <= 40:
             return '30-40'
         else:

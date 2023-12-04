@@ -80,6 +80,39 @@ def All_restrictions(df, restrictions=None, ingredients_list=None, required_ingr
 
 
 
+def All_restrictions_list(df, restrictions=None, ingredients_list=None, required_ingredients=None, excluded_ingredients=None):
+    '''
+    Apply a combination of filters to the DataFrame based on dietary restrictions, required ingredients, and ingredients to exclude.
+    Sorts the filtered DataFrame by weighted rating and resets the index.
+
+    Parameters:
+    df (pd.DataFrame): The DataFrame to filter.
+    restrictions (list): List of dietary restrictions to exclude.
+    ingredients_list (list): Comprehensive list of all possible ingredients.
+    required_ingredients (list): Ingredients that must be in the recipes.
+    excluded_ingredients (list): Ingredients that must not be in the recipes.
+
+    Returns:
+    pd.DataFrame: Filtered and sorted DataFrame.
+    '''
+
+    # Apply dietary restrictions filter
+    if restrictions:
+        df = filter_restrictions(df, *restrictions)  # Unpack the list
+
+    # Filter for recipes containing all required ingredients
+    if required_ingredients and ingredients_list:
+        df = optimized_realfooder_all_ingredients(df, ingredients_list, *required_ingredients)  # Unpack the list
+
+    # Exclude recipes with any of the disliked ingredients
+    if excluded_ingredients and ingredients_list:
+        df = optimized_picky_eater_exclude_all(df, ingredients_list, *excluded_ingredients)  # Unpack the list
+
+    # Sort the DataFrame by weighted rating and reset the index
+    return df.sort_values('weighted_rating', ascending=False).reset_index(drop=True)
+
+
+
 
 
 
