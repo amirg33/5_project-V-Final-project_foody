@@ -3,7 +3,7 @@ import utils
 
 
 # These are the two Databases that we will be working with
-ratings = pd.read_csv("../data/Unprocessed/RAW_interactions.csv") # In this DataFrame we find all the rating we got for the recipes
+ratings =pd.read_csv("../data/Unprocessed/RAW_interactions.csv") # In this DataFrame we find all the rating we got for the recipes
 recipes = pd.read_csv("../data/Unprocessed/RAW_recipes.csv") # In this DataFrame we find all the recipes
 def recipes_ratings_merged_cleaned():
 
@@ -109,6 +109,9 @@ def recipes_ratings_merged_cleaned():
 
     # Apply the weighted rating formula to each recipe in the filtered DataFrame
     recipes_with_ratings['weighted_rating'] = recipes_with_ratings.apply(weighted_rating, axis=1)
+
+    
+
 
 
     return recipes_with_ratings 
