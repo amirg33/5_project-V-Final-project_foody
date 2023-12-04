@@ -88,6 +88,24 @@ def recipes_ratings_merged_cleaned():
     # Apply the function to create a new column
     recipes_with_ratings['ingredient_group'] = recipes_with_ratings['n_ingredients'].apply(categorize_ingredients)
 
+    # Calculate the median number of ratings across all recipes
+    # This value serves as a threshold to differentiate between recipes with many vs few ratings
+    m = recipes_with_ratings['number_of_ratings'].quantile(0.50)
+
+    # Compute the mean average rating across all recipes
+    # This represents the typical rating a recipe receives in the dataset
+    C = recipes_with_ratings['average_rating'].mean()
+
+    # Define a function to calculate the weighted rating for each recipe
+    def weighted_rating(x, m=m, C=C):
+        v = x['number_of_ratings']  # Number of ratings for the recipe
+        R = x['average_rating']     # Average rating of the recipe
+        # Weighted rating formula: balances the recipe's average rating (R) with the mean rating (C)
+        return (v/(v+m) * R) + (m/(m+v) * C)
+
+    # Apply the weighted rating formula to each recipe in the filtered DataFrame
+    recipes_with_ratings['weighted_rating'] = recipes_with_ratings.apply(weighted_rating, axis=1)
+
 
     return recipes_with_ratings 
     #utils.nutrition_values(recipes_with_ratings["nutrition"])

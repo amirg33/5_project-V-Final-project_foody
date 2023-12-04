@@ -50,6 +50,7 @@ def optimized_picky_eater_exclude_all(df, ingredients_list, *args):
 def All_restrictions(df, restrictions=None, ingredients_list=None, required_ingredients=None, excluded_ingredients=None):
     '''
     Apply a combination of filters to the DataFrame based on dietary restrictions, required ingredients, and ingredients to exclude.
+    Sorts the filtered DataFrame by weighted rating and resets the index.
 
     Parameters:
     df (pd.DataFrame): The DataFrame to filter.
@@ -59,7 +60,7 @@ def All_restrictions(df, restrictions=None, ingredients_list=None, required_ingr
     excluded_ingredients (list): Ingredients that must not be in the recipes.
 
     Returns:
-    pd.DataFrame: Filtered DataFrame.
+    pd.DataFrame: Filtered and sorted DataFrame.
     '''
 
     # Apply dietary restrictions filter
@@ -74,7 +75,9 @@ def All_restrictions(df, restrictions=None, ingredients_list=None, required_ingr
     if excluded_ingredients and ingredients_list:
         df = optimized_picky_eater_exclude_all(df, ingredients_list, *excluded_ingredients)
 
-    return df
+    # Sort the DataFrame by weighted rating and reset the index
+    return df.sort_values('weighted_rating', ascending=False).reset_index(drop=True)
+
 
 
 
