@@ -65,7 +65,29 @@ def recipes_ratings_merged_cleaned():
             return f'About {interval} min' if interval != 0 else 'About 15 min'
 
     # Apply the function to create a new column
-    recipes_with_ratings['cookking_time'] = recipes_with_ratings['minutes'].apply(categorize_time)
+    recipes_with_ratings['cooking_time'] = recipes_with_ratings['minutes'].apply(categorize_time)
+
+    # Function to categorize number of ingredients into intervals
+    def categorize_ingredients(n_ingredients):
+        if n_ingredients <= 5:
+            return '0-5'
+        elif 5 < n_ingredients <= 10:
+            return '5-10'
+        elif 10 < n_ingredients <= 20:
+            return '10-20'
+        elif 20 < n_ingredients <= 30:
+            return '20-30'
+        elif 30 < n_ingredients <= 40:
+            return '30-40'
+        else:
+            return '> 40'
+    
+    # Drop columns we do not need for the database.  
+    recipes_with_ratings.drop(columns=['contributor_id', 'submitted'], inplace=True)
+
+    # Apply the function to create a new column
+    recipes_with_ratings['ingredient_group'] = recipes_with_ratings['n_ingredients'].apply(categorize_ingredients)
+
 
     return recipes_with_ratings 
     #utils.nutrition_values(recipes_with_ratings["nutrition"])
