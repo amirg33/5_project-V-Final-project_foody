@@ -110,10 +110,6 @@ def recipes_ratings_merged_cleaned():
     # Apply the weighted rating formula to each recipe in the filtered DataFrame
     recipes_with_ratings['weighted_rating'] = recipes_with_ratings.apply(weighted_rating, axis=1)
 
-    
-
-
-
     return recipes_with_ratings 
     #utils.nutrition_values(recipes_with_ratings["nutrition"])
 
