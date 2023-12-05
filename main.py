@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import streamlit_pandas as sp
 import numpy as np
 import pages.Recommendation  
 

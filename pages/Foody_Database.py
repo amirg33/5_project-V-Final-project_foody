@@ -5,7 +5,9 @@ import src.recipe_matcher as rm
 
 @st.cache_data
 def load_data():
-    return pd.read_csv("data/processed/reduced_df.csv")
+    return pd.read_csv("data/Processed//df_streamlit/df_recipes_final_filtered_dropped.csv")
+
+
 
 @st.cache_data
 def get_ingredients_list(df):
