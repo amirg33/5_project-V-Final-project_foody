@@ -61,4 +61,16 @@ def aggregate_unique_lists(df, column_name):
 
     return list(unique_elements)
 
+# Remove elements enclosed in double quotes
+def strip_string(ingredients_list):
+    return [ingredient for ingredient in ingredients_list if not (ingredient.startswith('"') or ingredient.endswith('"'))]
+
+def capitalize_after_period(text):
+    # Convert to string in case of non-string types like float (NaN values)
+    text = str(text)
+
+    sentences = text.split('. ')
+    capitalized_sentences = [sentence.capitalize() for sentence in sentences]
+    return '. '.join(capitalized_sentences)
+
 

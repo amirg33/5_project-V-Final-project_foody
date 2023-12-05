@@ -16,7 +16,6 @@ df_tags_unique = utils.extract_and_count(df, 'tags')
 ingredients_list = utils.aggregate_unique_lists(df, 'ingredients')
 
 # 
-# Creating a nutrition DataFrame by extracting and formatting nutrition data.
 
 
 def exploration_of_data():
@@ -33,12 +32,6 @@ def exploration_of_data():
     #df.steps = df.steps.map(lambda x: ast.literal_eval(x))
     #df.ingredients = df.ingredients.map(lambda x: ast.literal_eval(x))
     #df.nutrition = df.nutrition.map(lambda x: ast.literal_eval(x))
-
-    # Call the ingredients function rom utils, in order to get all ingredients in a list. 
-    # Save the ingredients into a csv file for later usage
-
-    
-
 
 
     def find_dairy_ingredients(ingredients_list):
@@ -430,7 +423,7 @@ def exploration_of_data():
     sorted_df_tags_unique.to_csv("../data/Processed/unique_values/tags_sorted_unique_values.csv", index=True)
     df_tags_unique.to_csv("../data/Processed/unique_values/df_tags.csv")
 
-
+    # Creating a nutrition DataFrame by extracting and formatting nutrition data.
     nutrition_df.to_csv("../data/Processed/df_streamlit/df_recipes_final_nutrition.csv")
 
     def split_dataframe_columns(df, columns_to_split):

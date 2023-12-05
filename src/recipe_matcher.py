@@ -30,9 +30,26 @@ def ingredient_selector(df, ingredients_list, *args):
 
 
 
+def ingredient_excluder(df, ingredients_list, *args):
+    '''
+    Function to exclude recipes containing any of the specified ingredients or those containing parts of these ingredients 
+    and return a filtered DataFrame excluding those recipes.
+    '''
+    if not args:
+        return df  # If no ingredients are specified, return the original DataFrame
+
+    # Create a set of disliked ingredient keywords from args
+    disliked_keywords = {ing for ing in args if ing in ingredients_list}
+
+    def contains_disliked_ingredient(ingredient_list):
+        # Check if any ingredient in the list contains any of the disliked keywords
+        return not any(disliked_keyword in ingredient for ingredient in ingredient_list for disliked_keyword in disliked_keywords)
+
+    # Filter DataFrame to exclude recipes containing any of the disliked ingredients
+    return df[df['ingredients'].apply(contains_disliked_ingredient)].reset_index(drop=True)
 
 
-
+"""
 def ingredient_excluder(df, ingredients_list, *args):
     '''
     Function to exclude recipes containing any of the specified ingredients and return a filtered DataFrame excluding those recipes.
@@ -45,7 +62,7 @@ def ingredient_excluder(df, ingredients_list, *args):
 
     # Filter DataFrame to exclude recipes containing any of the disliked ingredients
     return df[df['ingredients'].apply(lambda ingredients: not disliked_ingredients.intersection(ingredients))].reset_index(drop=True)
-
+"""
 
 def All_restrictions(df, restrictions=None, ingredients_list=None, required_ingredients=None, excluded_ingredients=None):
     '''

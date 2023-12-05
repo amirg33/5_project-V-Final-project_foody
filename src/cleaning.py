@@ -1,6 +1,6 @@
 import pandas as pd
 import utils
-
+import re
 
 # These are the two Databases that we will be working with
 ratings =pd.read_csv("../data/Unprocessed/RAW_interactions.csv") # In this DataFrame we find all the rating we got for the recipes
@@ -109,6 +109,29 @@ def recipes_ratings_merged_cleaned():
 
     # Apply the weighted rating formula to each recipe in the filtered DataFrame
     recipes_with_ratings['weighted_rating'] = recipes_with_ratings.apply(weighted_rating, axis=1)
+    
+    def singularize_ingredient(ingredient):
+        # Split the ingredient into words
+        words = ingredient.split()
+
+        # Only singularize if the ingredient is a single word
+        if len(words) == 1:
+            word = words[0]
+            # Handle specific plural forms
+            if word.endswith('ies'):
+                return re.sub('ies$', 'y', word)
+            elif word.endswith('s') and not word.endswith('ss'):
+                return re.sub('s$', '', word)
+            # Return the word if no plural form detected
+            return word
+        else:
+            # Return the original ingredient if it's more than one word
+            return ingredient
+
+    def process_ingredients(ingredients_list):
+        return [singularize_ingredient(ingredient) for ingredient in ingredients_list]
+
+    recipes_with_ratings['ingredients'] = recipes_with_ratings['ingredients'].apply(process_ingredients)
 
     return recipes_with_ratings 
     #utils.nutrition_values(recipes_with_ratings["nutrition"])
