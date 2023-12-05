@@ -15,7 +15,7 @@ def filter_restrictions(df, *args):
 
 
 
-def optimized_realfooder_all_ingredients(df, ingredients_list, *args):
+def ingredient_selector(df, ingredients_list, *args):
     '''
     Function to select recipes containing all specified ingredients and return a filtered DataFrame by those ingredients only.
     '''
@@ -33,7 +33,7 @@ def optimized_realfooder_all_ingredients(df, ingredients_list, *args):
 
 
 
-def optimized_picky_eater_exclude_all(df, ingredients_list, *args):
+def ingredient_excluder(df, ingredients_list, *args):
     '''
     Function to exclude recipes containing any of the specified ingredients and return a filtered DataFrame excluding those recipes.
     '''
@@ -69,11 +69,11 @@ def All_restrictions(df, restrictions=None, ingredients_list=None, required_ingr
 
     # Filter for recipes containing all required ingredients
     if required_ingredients and ingredients_list:
-        df = optimized_realfooder_all_ingredients(df, ingredients_list, *required_ingredients)
+        df = ingredient_selector(df, ingredients_list, *required_ingredients)
 
     # Exclude recipes with any of the disliked ingredients
     if excluded_ingredients and ingredients_list:
-        df = optimized_picky_eater_exclude_all(df, ingredients_list, *excluded_ingredients)
+        df = ingredient_excluder(df, ingredients_list, *excluded_ingredients)
 
     # Sort the DataFrame by weighted rating and reset the index
     return df.sort_values('weighted_rating', ascending=False).reset_index(drop=True)
@@ -102,11 +102,11 @@ def All_restrictions_list(df, restrictions=None, ingredients_list=None, required
 
     # Filter for recipes containing all required ingredients
     if required_ingredients and ingredients_list:
-        df = optimized_realfooder_all_ingredients(df, ingredients_list, *required_ingredients)  # Unpack the list
+        df = ingredient_selector(df, ingredients_list, *required_ingredients)  # Unpack the list
 
     # Exclude recipes with any of the disliked ingredients
     if excluded_ingredients and ingredients_list:
-        df = optimized_picky_eater_exclude_all(df, ingredients_list, *excluded_ingredients)  # Unpack the list
+        df = ingredient_excluder(df, ingredients_list, *excluded_ingredients)  # Unpack the list
 
     # Sort the DataFrame by weighted rating and reset the index
     return df.sort_values('weighted_rating', ascending=False).reset_index(drop=True)

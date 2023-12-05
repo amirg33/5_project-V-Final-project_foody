@@ -12,7 +12,7 @@ nutrition_df = cleaning.create_nutrition_df(df, 'nutrition', 'recipe_id')
 
 # Utils
 df_ingredients = utils.extract_and_count(df, 'ingredients')
-df_tags = utils.extract_and_count(df, 'tags')
+df_tags_unique = utils.extract_and_count(df, 'tags')
 ingredients_list = utils.aggregate_unique_lists(df, 'ingredients')
 
 # 
@@ -413,24 +413,64 @@ def exploration_of_data():
 
     # Filter the DataFrame to keep rows with more than 1 item in 'restrictions'
 
-    df.to_csv("../data/Processed/recipes_with_ratings_restrictions.csv", index=False)
+    df.to_csv("../data/Processed/df_recipes_final.csv", index=False)
 
     df_filtered = df[df['restrictions'].apply(lambda x: len(x) > 1)]
 
-    df_filtered.to_csv("../data/Processed/df_recipes_final.csv", index=False)
+    df_filtered.to_csv("../data/Processed/df_recipes_final_filtered.csv", index=False)
 
     # Sort the DataFrame based on 'unique_value' of ingredients column alphabetically
     sorted_df_ingredients = df_ingredients.sort_values(by=['unique_value','count'], ascending=True,)
     # Export the sorted 'unique_value' of ingredients column to a CSV file
-    sorted_df_ingredients.to_csv("../data/Processed/ingredients_sorted_unique_values.csv", index=False)
+    sorted_df_ingredients.to_csv("../data/Processed/unique_values/ingredients_sorted_unique_values.csv", index=True)
 
     # Sort the DataFrame based on 'unique_value' of tags column alphabetically
-    sorted_df_tags = df_tags.sort_values(by='count', ascending=True)
+    sorted_df_tags_unique = df_tags_unique.sort_values(by='count', ascending=True)
     # Export the sorted 'unique_value' of tags column to a CSV file
-    sorted_df_tags.to_csv("../data/Processed/tags_sorted_unique_values.csv", index=False)
+    sorted_df_tags_unique.to_csv("../data/Processed/unique_values/tags_sorted_unique_values.csv", index=True)
+    df_tags_unique.to_csv("../data/Processed/unique_values/df_tags.csv")
 
-    nutrition_df.to_csv("../data/Processed/df_nutrition.csv")
 
-    df_tags.to_csv("../data/Processed/df_tags.csv")
+    nutrition_df.to_csv("../data/Processed/df_streamlit/df_recipes_final_nutrition.csv")
 
-    return ingredients_list
+    def split_dataframe_columns(df, columns_to_split):
+        """
+        Splits specified columns from the original DataFrame into separate DataFrames, each with 'recipe_id'.
+        The specified columns and 'nutrition' column are dropped from the original DataFrame.
+
+        Parameters:
+        df (pandas.DataFrame): The original DataFrame.
+        columns_to_split (list): List of column names to split into separate DataFrames.
+
+        Returns:
+        dict: A dictionary containing the modified original DataFrame and new DataFrames for each specified column.
+        """
+        new_dfs = {}
+
+        # Create new DataFrames for each specified column
+        for column in columns_to_split:
+            new_dfs[f"df_{column}"] = df[['recipe_id', column]].copy()
+
+        # Drop specified columns and 'nutrition' from the original DataFrame
+        df = df.drop(columns=columns_to_split + ['nutrition'])
+
+        # Add the modified original DataFrame to the dictionary
+        new_dfs['original_df'] = df
+
+        return new_dfs
+
+    columns_to_extract = ['tags', 'steps', 'description']
+    result_dfs = split_dataframe_columns(df_filtered, columns_to_extract)
+
+    # Access the modified original DataFrame
+    modified_df = result_dfs['original_df']
+
+    # Access the new DataFrames
+    df_tags = result_dfs['df_tags']
+    df_steps = result_dfs['df_steps']
+    df_description = result_dfs['df_description']
+
+    modified_df.to_csv("../data/Processed/df_streamlit/df_recipes_final_filtered_dropped.csv", index=False)
+    df_tags.to_csv("../data/Processed/df_streamlit/df_recipes_final_tags.csv", index=False)
+    df_steps.to_csv("../data/Processed/df_streamlit/df_recipes_final_steps.csv", index=False)
+    df_description.to_csv("../data/Processed/df_streamlit/df_recipes_final_description.csv", index=False)
