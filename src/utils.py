@@ -74,3 +74,50 @@ def capitalize_after_period(text):
     return '. '.join(capitalized_sentences)
 
 
+def load_common_ingredients(ingredients_list):
+    """
+    Filters a list of ingredients, returning only those which are common household staples.
+
+    Parameters:
+    ingredients_list (list): The list of ingredients to filter.
+
+    Returns:
+    list: A list containing only common household ingredients.
+    """
+
+    # Define a set of common ingredients based on the provided list
+    common_ingredients_set = {
+        'salt', 'sugar', 'olive oil', 'flour', 'garlic cloves', 'pepper', 'brown sugar',
+        'all-purpose flour', 'baking powder', 'baking soda', 'vegetable oil', 'vanilla',
+        'black pepper', 'cinnamon', 'garlic powder', 'vanilla extract', 'oil', 'honey',
+        'onions', 'garlic clove', 'unsalted butter', 'soy sauce', 'mayonnaise', 'paprika',
+        'chicken broth', 'worcestershire sauce', 'extra virgin olive oil', 'cornstarch',
+        'fresh ground black pepper', 'parsley', 'chili powder', 'ground cinnamon', 'nutmeg',
+        'cayenne pepper', 'granulated sugar', 'ground cumin', 'kosher salt', 'powdered sugar',
+        'fresh lemon juice', 'heavy cream', 'margarine', 'dried oregano', 'garlic salt',
+        'egg yolks', 'red pepper flakes', 'cider vinegar', 'bay leaves', 'peanut butter',
+        'ground cloves', 'seasoning salt', 'red pepper', 'white vinegar', 'fresh thyme',
+        'salt & pepper', 'sesame seeds', 'hot sauce', 'beef broth', 'ground coriander',
+        'italian seasoning', 'black olives', 'maple syrup', 'whole milk', 'bread', 'turmeric',
+        'cayenne', 'green chilies', 'fresh rosemary', 'cocoa', 'dark brown sugar'
+    }
+
+    # Filter the input list based on common ingredients
+    filtered_common_ingredients = [ingredient for ingredient in ingredients_list if ingredient in common_ingredients_set]
+
+    return filtered_common_ingredients
+
+def split_and_save_df(df, file_path, part_size):
+    """
+    Splits a DataFrame into two parts and saves them as separate CSV files.
+
+    Parameters:
+    df (pd.DataFrame): The DataFrame to split.
+    file_path (str): The base file path for saving.
+    part_size (int): The number of rows in the first part.
+    """
+    df_part1 = df.iloc[:part_size]
+    df_part2 = df.iloc[part_size:]
+
+    df_part1.to_csv(f"{file_path}_part1.csv", index=False)
+    df_part2.to_csv(f"{file_path}_part2.csv", index=False)

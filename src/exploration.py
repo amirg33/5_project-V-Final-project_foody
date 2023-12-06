@@ -445,7 +445,7 @@ def exploration_of_data():
             new_dfs[f"df_{column}"] = df[['recipe_id', column]].copy()
 
         # Drop specified columns and 'nutrition' from the original DataFrame
-        df = df.drop(columns=columns_to_split + ['nutrition'])
+        df = df.drop(columns=columns_to_split + ['nutrition'] + ["ingredient_group"]+ ["cooking_time"])
 
         # Add the modified original DataFrame to the dictionary
         new_dfs['original_df'] = df
@@ -465,5 +465,5 @@ def exploration_of_data():
 
     modified_df.to_csv("../data/Processed/df_streamlit/df_recipes_final_filtered_dropped.csv", index=False)
     df_tags.to_csv("../data/Processed/df_streamlit/df_recipes_final_tags.csv", index=False)
-    df_steps.to_csv("../data/Processed/df_streamlit/df_recipes_final_steps.csv", index=False)
+    utils.split_and_save_df(df_steps, "../data/Processed/df_streamlit/df_recipes_final_steps", len(df_steps) // 2)    
     df_description.to_csv("../data/Processed/df_streamlit/df_recipes_final_description.csv", index=False)

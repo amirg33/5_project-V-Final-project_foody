@@ -1,4 +1,6 @@
 Unprocessed/
-Processed/
-data/
+unique_values/
+data/Processed/df_recipes_final_filtered.csv
+data/processed/df_recipes_final.csv
+
 __pycache__/
