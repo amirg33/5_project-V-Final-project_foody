@@ -5,8 +5,10 @@ import src.recipe_matcher as rm
 import ast
 import random as random
 
-st.set_page_config(page_title="Random Recipe ", page_icon="🔍", layout="wide")
-
+# Page Configuration
+st.set_page_config(page_title="Random Recipe Selector", page_icon="🔍", layout="wide")
+streamlit_red_color = "#FF4B4B"
+subheader_font_size = "24px"
 
 @st.cache_data
 def load_data():
@@ -58,11 +60,6 @@ df_nutrition = load_nutrition()
 df_steps = load_steps("data/Processed/df_streamlit/df_recipes_final_steps_part1.csv", 
                       "data/Processed/df_streamlit/df_recipes_final_steps_part2.csv")
 df_tags = load_tags()
-
-# Page Configuration
-st.set_page_config(page_title="Random Recipe Selector", page_icon="🔍", layout="wide")
-streamlit_red_color = "#FF4B4B"
-subheader_font_size = "24px"
 
 st.title('Random Recipe Selector')
 
