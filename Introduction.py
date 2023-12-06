@@ -34,14 +34,23 @@ st.markdown("---")
 
 # Images and suggestions (Placeholder for images)
 st.header("Recipe Inspirations")
-st.write("Here are some popular categories to explore:")
+st.subheader("Here are some popular categories to explore:")
+col1, col2 = st.columns(2)
 
-# Example categories with images (replace with actual image paths or URLs)
-categories = ["Healthy & Fresh: KITTENCAL'S FAMOUS GREEK SALAD ", "Quick & Easy: EASY SEAFOOD COCKTAIL SAUCE", "Comfort Food: MOM'S BREAKFAST BURRITO", "Exotic: EXOTIC FRUIT SALAD"]
-image_paths = ["./images/healthy.jpg", "./images/quick.jpg", "./images/comfort.jpg", "./images/exotic.jpg"]
+with col1:
+    categories = ["Healthy & Fresh: Hawaiian Red Tuna Poke ", "Quick & Easy: The Best Ever Waffles"]
+    image_paths = ["./images/healthy.jpg", "./images/quick.jpg"]
 
-for category, img_path in zip(categories, image_paths):
-    st.image(img_path, caption=f"{category}", width=300)
+    for category, img_path in zip(categories, image_paths):
+        st.image(img_path, caption=f"{category}", width=300)
+
+with col2:
+    categories = ["Comfort Food: The Most Wonderful Gingerbread Cookies", "Exotic: Perfect Prime Rib Roast Beef"]
+    image_paths = ["./images/comfort.jpg", "./images/exotic.jpg"]
+
+    for category, img_path in zip(categories, image_paths):
+        st.image(img_path, caption=f"{category}", width=300)
+
 
 # Divider
 st.markdown("---")
