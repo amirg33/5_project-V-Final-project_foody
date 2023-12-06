@@ -52,3 +52,13 @@
 - steps --> Put that as well for each recipe
 
 ### To do list for Friday
+
+### Tableau
+
+- Bins of minutes per ingredients
+  - if conditions if the ingredients short medium long
+
+- Counts de color por minutes 
+- Pie chart de restricciones /Probar radial
+- Table/graph de top Rating and Number of Reviews (filter by restrictions) buscar accion - URL markdown
+- filtro rank

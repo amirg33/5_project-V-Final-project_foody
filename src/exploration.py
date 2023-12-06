@@ -266,27 +266,29 @@ def exploration_of_data():
         vegetarian_categories = {
             'vegetarian_varieties': {
                 'keywords': [
-                    r'\bvegetables\b', r'\bfruits\b', r'\blegumes\b', r'\bbeans\b', r'\btofu\b', r'\btempeh\b', 
-                    r'\blentils\b', r'\bseitan\b', r'\bnuts\b', r'\bseeds\b', r'\bwhole grains\b', r'\bherbs\b', 
-                    r'\bspices\b', r'\balmond milk\b', r'\bsoy milk\b', r'\brice milk\b', r'\boat milk\b',
-                    r'\bplant-based\b', r'\bquinoa\b', r'\bchia\b', r'\bflaxseed\b', r'\bpeas\b', r'\bmushrooms\b',
-                    r'\bavocado\b', r'\beggplant\b', r'\bzucchini\b', r'\bsquash\b', r'\bpeppers\b', r'\btomatoes\b',
-                    r'\bsweet potatoes\b', r'\bcarrots\b', r'\bcauliflower\b', r'\bbroccoli\b', r'\basparagus\b',
-                    r'\bbrussels sprouts\b', r'\bspinach\b', r'\bkale\b', r'\bgarlic\b', r'\bonions\b'
+                    r'\bmeat\b', r'\bpork\b', r'\blamb\b', r'\bchicken\b', r'\bbeef\b', r'\bduck\b', r'\bbuffalo\b', r'\bpoultry\b', 
+                    r'\bcod\b', r'\bfish\b', r'\bsushi\b', r'\btuna\b', r'\bbass\b', r'\bfillet\b', r'\bribs\b', r'\btrout\b', 
+                    r'\banchovy\b', r'\bbarramundi\b', r'\bsteak\b', r'\bbasa\b', r'\btenderloin\b', r'\bbison\b', r'\bangus\b', 
+                    r'\bsalmon\b', r'\bsnapper\b', r'\bliver\b', r'\bpollo\b', r'\bplaice\b', r'\bpickerel\b', r'\bostrich\b', 
+                    r'\broughy\b', r'\bopah\b', r'\bperch\b', r'\bpike\b', r'\bahi\b', r'\bmarlin\b', r'\bcrab\b', r'\bmackerel\b', 
+                    r'\bloin\b', r'\blobster\b', r'\bleg\b', r'\bsausage\b', r'\bfrankfurt\b', r'\blean\b', r'\bshark\b', r'\bwhale\b', 
+                    r'\bdolphin\b', r'\bclam\b', r'\bkidney\b', r'\bheart\b', r'\bbrain\b', r'\btongue\b', r'\barm roast\b', 
+                    r'\bbear\b', r'\brump\b', r'\bround roast\b', r'\bbroil\b', r'\bcaribou\b', r'\bdeer\b', r'\bblade\b', 
+                    r'\bchuck\b', r'\belk\b', r'\bham\b', r'\bturkey\b', r'\bmortadella\b', r'\bkangaroo\b', r'\bkobe\b', 
+                    r'\bmahi\b', r'\balligator\b', r'\bcrocodile\b', r'\bllama\b', r'\bbangus\b', r'\bbacon\b', r'\bantelope\b', 
+                    r'\bveggie\b', r'\bvegetarian\b', r'\bvegan\b', r'\bmeatless\b', r'\bartichoke heart\b', r'\bbechamel\b', 
+                    r'\bchampagne\b', r'\bgraham\b', r'\bchamomile\b', r'\bmace blades\b'                   
                 ],
                 'exclusions': [
-                    'meat', 'pork', 'lamb', 'chicken', 'beef', 'duck', 'buffalo', 'poultry', 'cod', 'fish', 'sushi', 
-                    'tuna', 'bass', 'fillet', 'ribs', 'trout', 'anchovy', 'barramundi', 'steak', 'basa', 'tenderloin', 
-                    'bison', 'angus', 'salmon', 'snapper', 'liver', 'pollo', 'plaice', 'pickerel', 'ostrich', 'roughy', 
-                    'opah', 'perch', 'pike', 'ahi', 'marlin', 'crab', 'mackerel', 'loin', 'lobster', 'leg', 'sausage', 
-                    'frankfurt', 'lean', 'shark', 'whale', 'dolphin', 'clam', 'kidney', 'heart', 'brain', 'tongue', 
-                    'arm roast', 'bear', 'rump', 'round roast', 'broil', 'caribou', 'deer', 'blade', 'chuck', 'elk', 
-                    'ham', 'turkey', 'mortadella', 'kangaroo', 'kobe', 'mahi', 'alligator', 'crocodile', 'llama', 
-                    'bangus', 'bacon', 'antelope', 'veggie', 'vegetarian', 'vegan', 'meatless', 'artichoke heart', 
-                    'bechamel', 'champagne', 'graham', 'chamomile', 'mace blades'
+                    'vegetables', 'fruits', 'legumes', 'beans', 'tofu', 'tempeh', 
+                    'lentils', 'seitan', 'nuts', 'seeds', 'whole grains', 'herbs', 
+                    'spices', 'almond milk', 'soy milk', 'rice milk', 'oat milk', 'plant-based', 
+                    'quinoa', 'chia', 'flaxseed', 'peas', 'mushrooms', 'avocado', 
+                    'eggplant', 'zucchini', 'squash', 'peppers', 'tomatoes', 'sweet potatoes', 
+                    'carrots', 'cauliflower', 'broccoli', 'asparagus', 'brussels sprouts', 
+                    'spinach', 'kale', 'garlic', 'onions'
                 ]
             },
-            # Additional specific vegetarian categories can be added here
         }
 
         # Function to compile regex and find matches
@@ -311,45 +313,46 @@ def exploration_of_data():
         vegan_categories = {
             'vegan_varieties': {
                 'keywords': [
-                    r'\bvegetables\b', r'\bfruits\b', r'\blegumes\b', r'\bbeans\b', r'\btofu\b', r'\btempeh\b', 
-                    r'\blentils\b', r'\bseitan\b', r'\bnuts\b', r'\bseeds\b', r'\bwhole grains\b', r'\bherbs\b', 
-                    r'\bspices\b', r'\balmond milk\b', r'\bsoy milk\b', r'\brice milk\b', r'\boat milk\b',
-                    r'\bplant-based\b', r'\bquinoa\b', r'\bchia\b', r'\bflaxseed\b', r'\bpeas\b', r'\bmushrooms\b',
-                    r'\bavocado\b', r'\beggplant\b', r'\bzucchini\b', r'\bsquash\b', r'\bpeppers\b', r'\btomatoes\b',
-                    r'\bsweet potatoes\b', r'\bcarrots\b', r'\bcauliflower\b', r'\bbroccoli\b', r'\basparagus\b',
-                    r'\bbrussels sprouts\b', r'\bspinach\b', r'\bkale\b', r'\bgarlic\b', r'\bonions\b',
-                    r'\bsalt\b', r'\bsugar\b', r'\bolive oil\b', r'\bflour\b', r'\bgarlic cloves\b', r'\bpepper\b',
-                    r'\bbrown sugar\b', r'\bgarlic\b', r'\ball-purpose flour\b', r'\bvegetable oil\b', r'\bvanilla\b',
-                    r'\bblack pepper\b', r'\bcinnamon\b', r'\bgarlic powder\b', r'\bvanilla extract\b', r'\boil\b',
-                    r'\bonions\b', r'\bcelery\b', r'\bcarrots\b', r'\bsoy sauce\b', r'\bpaprika\b',
-                    r'\blemon juice\b', r'\bextra virgin olive oil\b', r'\bfresh parsley\b', r'\bcornstarch\b',
-                    r'\bfresh ground black pepper\b', r'\bparsley\b', r'\bchili powder\b', r'\bground cinnamon\b',
-                    r'\blemon\b', r'\bpotatoes\b', r'\bnutmeg\b', r'\bcayenne pepper\b', r'\bgranulated sugar\b',
-                    r'\bground cumin\b', r'\bwalnuts\b', r'\bpecans\b', r'\bdijon mustard\b', r'\bkosher salt\b',
-                    r'\bpowdered sugar\b', r'\bfresh lemon juice\b', r'\bmargarine\b', r'\bdried oregano\b',
-                    r'\borange juice\b', r'\bzucchini\b', r'\braisins\b', r'\bred bell pepper\b', r'\btomato sauce\b',
-                    r'\bfresh cilantro\b', r'\btomato paste\b', r'\bcanola oil\b', r'\bgreen pepper\b', r'\bfresh ginger\b',
-                    r'\bcumin\b', r'\boregano\b', r'\bjuice of\b', r'\bground black pepper\b', r'\bketchup\b',
-                    r'\bbalsamic vinegar\b', r'\blime juice\b', r'\bcilantro\b', r'\bground ginger\b', r'\bfresh basil\b',
-                    r'\bginger\b', r'\bonion powder\b', r'\bdried thyme\b', r'\bdiced tomatoes\b', r'\bvinegar\b',
-                    r'\bgreen bell pepper\b', r'\bbay leaf\b', r'\bdried basil\b', r'\bwhite sugar\b', r'\bred wine vinegar\b',
-                    r'\bfresh ground pepper\b', r'\bsea salt\b', r'\bdry white wine\b', r'\bsalt & freshly ground black pepper\b',
-                    r'\bwhole wheat flour\b', r'\blight brown sugar\b', r'\bsesame oil\b', r'\bthyme\b', r'\bcurry powder\b',
+                    r'\bmeat\b', r'\bpork\b', r'\blamb\b', r'\bchicken\b', r'\bbeef\b', r'\bduck\b', r'\bbuffalo\b', r'\bpoultry\b', 
+                    r'\bcod\b', r'\bfish\b', r'\bsushi\b', r'\btuna\b', r'\bbass\b', r'\bfillet\b', r'\bribs\b', r'\btrout\b', 
+                    r'\banchovy\b', r'\bbarramundi\b', r'\bsteak\b', r'\bbasa\b', r'\btenderloin\b', r'\bbison\b', r'\bangus\b', 
+                    r'\bsalmon\b', r'\bsnapper\b', r'\bliver\b', r'\bpollo\b', r'\bplaice\b', r'\bpickerel\b', r'\bostrich\b', 
+                    r'\broughy\b', r'\bopah\b', r'\bperch\b', r'\bpike\b', r'\bahi\b', r'\bmarlin\b', r'\bcrab\b', r'\bmackerel\b', 
+                    r'\bloin\b', r'\blobster\b', r'\bleg\b', r'\bsausage\b', r'\bfrankfurt\b', r'\blean\b', r'\bshark\b', r'\bwhale\b', 
+                    r'\bdolphin\b', r'\bclam\b', r'\bkidney\b', r'\bheart\b', r'\bbrain\b', r'\btongue\b', r'\barm roast\b', 
+                    r'\bbear\b', r'\brump\b', r'\bround roast\b', r'\bbroil\b', r'\bcaribou\b', r'\bdeer\b', r'\bblade\b', 
+                    r'\bchuck\b', r'\belk\b', r'\bham\b', r'\bturkey\b', r'\bmortadella\b', r'\bkangaroo\b', r'\bkobe\b', 
+                    r'\bmahi\b', r'\balligator\b', r'\bcrocodile\b', r'\bllama\b', r'\bbangus\b', r'\bbacon\b', r'\bantelope\b', 
+                    r'\bvegetarian\b', r'\bvegan\b', r'\bmeatless\b', r'\bartichoke heart\b', r'\bbechamel\b', 
+                    r'\bchampagne\b', r'\bgraham\b', r'\bchamomile\b', r'\bmace blades\b'
                 ],
                 'exclusions': [
-                    'meat', 'pork', 'lamb', 'chicken', 'beef', 'duck', 'buffalo', 'poultry', 'cod', 'fish', 'sushi', 
-                    'tuna', 'bass', 'fillet', 'ribs', 'trout', 'anchovy', 'barramundi', 'steak', 'basa', 'tenderloin', 
-                    'bison', 'angus', 'salmon', 'snapper', 'liver', 'pollo', 'plaice', 'pickerel', 'ostrich', 'roughy', 
-                    'opah', 'perch', 'pike', 'ahi', 'marlin', 'crab', 'mackerel', 'loin', 'lobster', 'leg', 'sausage', 
-                    'frankfurt', 'lean', 'shark', 'whale', 'dolphin', 'clam', 'kidney', 'heart', 'brain', 'tongue', 
-                    'arm roast', 'bear', 'rump', 'round roast', 'broil', 'caribou', 'deer', 'blade', 'chuck', 'elk', 
-                    'ham', 'turkey', 'mortadella', 'kangaroo', 'kobe', 'mahi', 'alligator', 'crocodile', 'llama', 
-                    'bangus', 'bacon', 'antelope', 'egg', 'dairy', 'milk', 'yogurt', 'butter', 'cream', 'cheese', 
-                    'ice cream', 'curd', 'whey', 'casein', 'ghee', 'kefir', 'paneer', 'condensed milk', 'evaporated milk', 
-                    'milk powder', 'honey'
+                    'vegetables', 'fruits', 'legumes', 'beans', 'tofu', 'tempeh', 
+                    'lentils', 'seitan', 'nuts', 'seeds', 'whole grains', 'herbs', 
+                    'spices', 'almond milk', 'soy milk', 'rice milk', 'oat milk',
+                    'plant-based', 'quinoa', 'chia', 'flaxseed', 'peas', 'mushrooms',
+                    'avocado', 'eggplant', 'zucchini', 'squash', 'peppers', 'tomatoes',
+                    'sweet potatoes', 'carrots', 'cauliflower', 'broccoli', 'asparagus',
+                    'brussels sprouts', 'spinach', 'kale', 'garlic', 'onions',
+                    'salt', 'sugar', 'olive oil', 'flour', 'garlic cloves', 'pepper',
+                    'brown sugar', 'all-purpose flour', 'vegetable oil', 'vanilla',
+                    'black pepper', 'cinnamon', 'garlic powder', 'vanilla extract', 'oil',
+                    'celery', 'carrots', 'soy sauce', 'paprika',
+                    'lemon juice', 'extra virgin olive oil', 'fresh parsley', 'cornstarch',
+                    'fresh ground black pepper', 'parsley', 'chili powder', 'ground cinnamon',
+                    'lemon', 'potatoes', 'nutmeg', 'cayenne pepper', 'granulated sugar',
+                    'ground cumin', 'walnuts', 'pecans', 'dijon mustard', 'kosher salt',
+                    'powdered sugar', 'fresh lemon juice', 'margarine', 'dried oregano',
+                    'orange juice', 'raisins', 'red bell pepper', 'tomato sauce',
+                    'fresh cilantro', 'tomato paste', 'canola oil', 'green pepper', 'fresh ginger',
+                    'cumin', 'oregano', 'juice of', 'ground black pepper', 'ketchup',
+                    'balsamic vinegar', 'lime juice', 'cilantro', 'ground ginger', 'fresh basil',
+                    'ginger', 'onion powder', 'dried thyme', 'diced tomatoes', 'vinegar',
+                    'green bell pepper', 'bay leaf', 'dried basil', 'white sugar', 'red wine vinegar',
+                    'fresh ground pepper', 'sea salt', 'dry white wine', 'salt & freshly ground black pepper',
+                    'whole wheat flour', 'light brown sugar', 'sesame oil', 'thyme', 'curry powder'
                 ]
             },
-            # Additional specific vegan categories can be added here
         }
 
         # Function to compile regex and find matches
@@ -408,9 +411,9 @@ def exploration_of_data():
 
     df.to_csv("../data/Processed/df_recipes_final.csv", index=False)
 
-    df_filtered = df[df['restrictions'].apply(lambda x: len(x) > 1)]
-
-    df_filtered.to_csv("../data/Processed/df_recipes_final_filtered.csv", index=False)
+    #Chooses only recipes that have restrictions. 
+    #df_filtered = df[df['restrictions'].apply(lambda x: len(x) > 1)]
+    #df_filtered.to_csv("../data/Processed/df_recipes_final_filtered.csv", index=False)
 
     # Sort the DataFrame based on 'unique_value' of ingredients column alphabetically
     sorted_df_ingredients = df_ingredients.sort_values(by=['unique_value','count'], ascending=True,)
@@ -453,7 +456,7 @@ def exploration_of_data():
         return new_dfs
 
     columns_to_extract = ['tags', 'steps', 'description']
-    result_dfs = split_dataframe_columns(df_filtered, columns_to_extract)
+    result_dfs = split_dataframe_columns(df, columns_to_extract)
 
     # Access the modified original DataFrame
     modified_df = result_dfs['original_df']
@@ -467,3 +470,4 @@ def exploration_of_data():
     df_tags.to_csv("../data/Processed/df_streamlit/df_recipes_final_tags.csv", index=False)
     utils.split_and_save_df(df_steps, "../data/Processed/df_streamlit/df_recipes_final_steps", len(df_steps) // 2)    
     df_description.to_csv("../data/Processed/df_streamlit/df_recipes_final_description.csv", index=False)
+

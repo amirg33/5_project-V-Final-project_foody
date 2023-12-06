@@ -149,11 +149,13 @@ if st.button('Find Your Recipes'):
 
     df_filtered = df_filtered[df_filtered['minutes'] <= selected_max_cooking_time]
 
+    if df_filtered.empty:
+        st.subheader("No recipes found")
+        st.image("./images/no_recipes.gif") 
+    else:
+        st.header("Filtered Recipes:")
 
-    st.header("Filtered Recipes:")
-
-
-        # Iterate over each row in the filtered DataFrame
+    # Iterate over each row in the filtered DataFrame
     for index, row in df_filtered.head(num_recipes).iterrows():
         st.markdown(f"<h2 style='color: {streamlit_red_color}; font-size: {subheader_font_size};'>{row['name'].upper()}</h2>", unsafe_allow_html=True)
 

@@ -1,0 +1,659 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20233.23.1017.0948                               -->
+<workbook original-version='18.1' source-build='2023.3.0 (20233.23.1017.0948)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='df_recipes_final' inline='true' name='federated.1y9mjah03tbdu31ghk22h1veqf68' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='df_recipes_final' name='textscan.1gptb150diszo01gpzs0w0m9qh5t'>
+            <connection class='textscan' directory='C:/Users/amirg/OneDrive/Documents/Iron hack/1_Data Analysis_Oktober/Projects/5_project-V-Final-project_foody/data/Processed' filename='df_recipes_final.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.1gptb150diszo01gpzs0w0m9qh5t' name='df_recipes_final.csv' table='[df_recipes_final#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='es_ES'>
+            <column datatype='string' name='name' ordinal='0' />
+            <column datatype='integer' name='recipe_id' ordinal='1' />
+            <column datatype='integer' name='minutes' ordinal='2' />
+            <column datatype='string' name='tags' ordinal='3' />
+            <column datatype='string' name='nutrition' ordinal='4' />
+            <column datatype='integer' name='n_steps' ordinal='5' />
+            <column datatype='string' name='steps' ordinal='6' />
+            <column datatype='string' name='description' ordinal='7' />
+            <column datatype='string' name='ingredients' ordinal='8' />
+            <column datatype='integer' name='n_ingredients' ordinal='9' />
+            <column datatype='string' name='average_rating' ordinal='10' />
+            <column datatype='integer' name='number_of_ratings' ordinal='11' />
+            <column datatype='string' name='url' ordinal='12' />
+            <column datatype='string' name='cooking_time' ordinal='13' />
+            <column datatype='string' name='ingredient_group' ordinal='14' />
+            <column datatype='string' name='weighted_rating' ordinal='15' />
+            <column datatype='string' name='restrictions' ordinal='16' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.1gptb150diszo01gpzs0w0m9qh5t' name='df_recipes_final.csv' table='[df_recipes_final#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='es_ES'>
+            <column datatype='string' name='name' ordinal='0' />
+            <column datatype='integer' name='recipe_id' ordinal='1' />
+            <column datatype='integer' name='minutes' ordinal='2' />
+            <column datatype='string' name='tags' ordinal='3' />
+            <column datatype='string' name='nutrition' ordinal='4' />
+            <column datatype='integer' name='n_steps' ordinal='5' />
+            <column datatype='string' name='steps' ordinal='6' />
+            <column datatype='string' name='description' ordinal='7' />
+            <column datatype='string' name='ingredients' ordinal='8' />
+            <column datatype='integer' name='n_ingredients' ordinal='9' />
+            <column datatype='string' name='average_rating' ordinal='10' />
+            <column datatype='integer' name='number_of_ratings' ordinal='11' />
+            <column datatype='string' name='url' ordinal='12' />
+            <column datatype='string' name='cooking_time' ordinal='13' />
+            <column datatype='string' name='ingredient_group' ordinal='14' />
+            <column datatype='string' name='weighted_rating' ordinal='15' />
+            <column datatype='string' name='restrictions' ordinal='16' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[df_recipes_final.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;es&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;€&quot;</attribute>
+              <attribute datatype='string' name='decimal-char'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;es_ES&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='thousands-char'>&quot;.&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[name]</local-name>
+            <parent-name>[df_recipes_final.csv]</parent-name>
+            <remote-alias>name</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_recipes_final.csv_EEA1558500A24CBBB537EFA22CC69B23]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>recipe_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[recipe_id]</local-name>
+            <parent-name>[df_recipes_final.csv]</parent-name>
+            <remote-alias>recipe_id</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_recipes_final.csv_EEA1558500A24CBBB537EFA22CC69B23]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>minutes</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[minutes]</local-name>
+            <parent-name>[df_recipes_final.csv]</parent-name>
+            <remote-alias>minutes</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_recipes_final.csv_EEA1558500A24CBBB537EFA22CC69B23]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tags</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[tags]</local-name>
+            <parent-name>[df_recipes_final.csv]</parent-name>
+            <remote-alias>tags</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_recipes_final.csv_EEA1558500A24CBBB537EFA22CC69B23]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>nutrition</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[nutrition]</local-name>
+            <parent-name>[df_recipes_final.csv]</parent-name>
+            <remote-alias>nutrition</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_recipes_final.csv_EEA1558500A24CBBB537EFA22CC69B23]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>n_steps</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[n_steps]</local-name>
+            <parent-name>[df_recipes_final.csv]</parent-name>
+            <remote-alias>n_steps</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_recipes_final.csv_EEA1558500A24CBBB537EFA22CC69B23]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>steps</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[steps]</local-name>
+            <parent-name>[df_recipes_final.csv]</parent-name>
+            <remote-alias>steps</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_recipes_final.csv_EEA1558500A24CBBB537EFA22CC69B23]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>description</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[description]</local-name>
+            <parent-name>[df_recipes_final.csv]</parent-name>
+            <remote-alias>description</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_recipes_final.csv_EEA1558500A24CBBB537EFA22CC69B23]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ingredients</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ingredients]</local-name>
+            <parent-name>[df_recipes_final.csv]</parent-name>
+            <remote-alias>ingredients</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_recipes_final.csv_EEA1558500A24CBBB537EFA22CC69B23]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>n_ingredients</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[n_ingredients]</local-name>
+            <parent-name>[df_recipes_final.csv]</parent-name>
+            <remote-alias>n_ingredients</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_recipes_final.csv_EEA1558500A24CBBB537EFA22CC69B23]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>average_rating</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[average_rating]</local-name>
+            <parent-name>[df_recipes_final.csv]</parent-name>
+            <remote-alias>average_rating</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_recipes_final.csv_EEA1558500A24CBBB537EFA22CC69B23]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>number_of_ratings</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[number_of_ratings]</local-name>
+            <parent-name>[df_recipes_final.csv]</parent-name>
+            <remote-alias>number_of_ratings</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_recipes_final.csv_EEA1558500A24CBBB537EFA22CC69B23]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>url</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[url]</local-name>
+            <parent-name>[df_recipes_final.csv]</parent-name>
+            <remote-alias>url</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_recipes_final.csv_EEA1558500A24CBBB537EFA22CC69B23]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cooking_time</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[cooking_time]</local-name>
+            <parent-name>[df_recipes_final.csv]</parent-name>
+            <remote-alias>cooking_time</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_recipes_final.csv_EEA1558500A24CBBB537EFA22CC69B23]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ingredient_group</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ingredient_group]</local-name>
+            <parent-name>[df_recipes_final.csv]</parent-name>
+            <remote-alias>ingredient_group</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_recipes_final.csv_EEA1558500A24CBBB537EFA22CC69B23]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>weighted_rating</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[weighted_rating]</local-name>
+            <parent-name>[df_recipes_final.csv]</parent-name>
+            <remote-alias>weighted_rating</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_recipes_final.csv_EEA1558500A24CBBB537EFA22CC69B23]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>restrictions</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[restrictions]</local-name>
+            <parent-name>[df_recipes_final.csv]</parent-name>
+            <remote-alias>restrictions</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[df_recipes_final.csv_EEA1558500A24CBBB537EFA22CC69B23]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Dairy' datatype='integer' name='[Calculation_1975954366738845696]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF CONTAINS([restrictions],&apos;Dairy&apos;) Then 1 ELSE 0 END' />
+      </column>
+      <column caption='Gluten' datatype='integer' name='[Calculation_1975954366740512769]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF CONTAINS([restrictions],&apos;Gluten&apos;) Then 1 ELSE 0 END' />
+      </column>
+      <column caption='Vegan' datatype='integer' name='[Calculation_1975954366740598786]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF CONTAINS([restrictions],&apos;Vegan&apos;) Then 1 ELSE 0 END' />
+      </column>
+      <column caption='Vegetarian' datatype='integer' name='[Calculation_1975954366740656131]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF CONTAINS([restrictions],&apos;Vegetarian&apos;) Then 1 ELSE 0 END' />
+      </column>
+      <column caption='Nuts' datatype='integer' name='[Calculation_1975954366740742148]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF CONTAINS([restrictions],&apos;Nuts&apos;) Then 1 ELSE 0 END' />
+      </column>
+      <column caption='Rating' datatype='real' name='[Calculation_1975954366743474181]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='ROUND(FLOAT([average_rating]),2)' />
+      </column>
+      <column caption='Dairy-Free' datatype='integer' name='[Calculation_3780490442484736003]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [Calculation_1975954366738845696] == 1 THEN 1 ELSE 0 END' />
+      </column>
+      <column caption='Gluten-Free' datatype='integer' name='[Calculation_3780490442485432325]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [Calculation_1975954366740512769] == 1 THEN 1 ELSE 0 END' />
+      </column>
+      <column caption='Nuts-Free' datatype='integer' name='[Calculation_3780490442486591494]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='if [Calculation_1975954366740742148] == 1 Then 1 else 0 END' />
+      </column>
+      <column caption='Vegetarian ' datatype='integer' name='[Calculation_3780490442486861831]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='if [Calculation_1975954366740656131] == 1 Then 1 else 0 END' />
+      </column>
+      <column caption='Vegan ' datatype='integer' name='[Calculation_3780490442487025672]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='if [Calculation_1975954366740598786] == 1 Then 1 else 0 END' />
+      </column>
+      <_.fcp.ObjectModelTableType.true...column caption='df_recipes_final.csv' datatype='table' name='[__tableau_internal_object_id__].[df_recipes_final.csv_EEA1558500A24CBBB537EFA22CC69B23]' role='measure' type='quantitative' />
+      <column caption='Average Rating' datatype='string' name='[average_rating]' role='dimension' type='nominal' />
+      <column caption='Cooking Time' datatype='string' name='[cooking_time]' role='dimension' type='nominal' />
+      <column caption='Description' datatype='string' name='[description]' role='dimension' type='nominal' />
+      <column caption='Ingredient Group' datatype='string' name='[ingredient_group]' role='dimension' type='nominal' />
+      <column caption='Ingredients' datatype='string' name='[ingredients]' role='dimension' type='nominal' />
+      <column caption='Minutes' datatype='integer' name='[minutes]' role='measure' type='ordinal' />
+      <column caption='N Ingredients' datatype='integer' name='[n_ingredients]' role='measure' type='quantitative' />
+      <column caption='N Steps' datatype='integer' name='[n_steps]' role='measure' type='quantitative' />
+      <column caption='Name' datatype='string' name='[name]' role='dimension' type='nominal' />
+      <column caption='Number Of Ratings' datatype='integer' name='[number_of_ratings]' role='measure' type='quantitative' />
+      <column caption='Nutrition' datatype='string' name='[nutrition]' role='dimension' type='nominal' />
+      <column caption='Recipe Id' datatype='integer' name='[recipe_id]' role='dimension' type='ordinal' />
+      <column caption='Restrictions' datatype='string' name='[restrictions]' role='dimension' type='nominal' />
+      <column caption='Steps' datatype='string' name='[steps]' role='dimension' type='nominal' />
+      <column caption='Tags' datatype='string' name='[tags]' role='dimension' type='nominal' />
+      <column caption='Url' datatype='string' name='[url]' role='dimension' type='nominal' />
+      <column caption='Weighted Rating' datatype='string' name='[weighted_rating]' role='dimension' type='nominal' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Spain&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='name' />
+        <field-sort-custom-order field='recipe_id' />
+        <field-sort-custom-order field='minutes' />
+        <field-sort-custom-order field='tags' />
+        <field-sort-custom-order field='nutrition' />
+        <field-sort-custom-order field='n_steps' />
+        <field-sort-custom-order field='steps' />
+        <field-sort-custom-order field='description' />
+        <field-sort-custom-order field='ingredients' />
+        <field-sort-custom-order field='n_ingredients' />
+        <field-sort-custom-order field='average_rating' />
+        <field-sort-custom-order field='Calculation_1975954366743474181' />
+        <field-sort-custom-order field='number_of_ratings' />
+        <field-sort-custom-order field='url' />
+        <field-sort-custom-order field='cooking_time' />
+        <field-sort-custom-order field='ingredient_group' />
+        <field-sort-custom-order field='weighted_rating' />
+        <field-sort-custom-order field='restrictions' />
+        <field-sort-custom-order field='Calculation_1975954366740742148' />
+        <field-sort-custom-order field='Calculation_3780490442486591494' />
+        <field-sort-custom-order field='Calculation_1975954366740656131' />
+        <field-sort-custom-order field='Calculation_3780490442486861831' />
+        <field-sort-custom-order field='Calculation_1975954366740598786' />
+        <field-sort-custom-order field='Calculation_3780490442487025672' />
+        <field-sort-custom-order field='Calculation_1975954366740512769' />
+        <field-sort-custom-order field='Calculation_3780490442485432325' />
+        <field-sort-custom-order field='Calculation_1975954366738845696' />
+        <field-sort-custom-order field='Calculation_3780490442484736003' />
+        <field-sort-custom-order field='Geometry (generated)' />
+        <field-sort-custom-order field='Latitude (generated)' />
+        <field-sort-custom-order field='Longitude (generated)' />
+        <field-sort-custom-order field=':Measure Names' />
+        <field-sort-custom-order field='Multiple Values' />
+      </field-sort-info>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='df_recipes_final.csv' id='df_recipes_final.csv_EEA1558500A24CBBB537EFA22CC69B23'>
+            <properties context=''>
+              <relation connection='textscan.1gptb150diszo01gpzs0w0m9qh5t' name='df_recipes_final.csv' table='[df_recipes_final#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='es_ES'>
+                  <column datatype='string' name='name' ordinal='0' />
+                  <column datatype='integer' name='recipe_id' ordinal='1' />
+                  <column datatype='integer' name='minutes' ordinal='2' />
+                  <column datatype='string' name='tags' ordinal='3' />
+                  <column datatype='string' name='nutrition' ordinal='4' />
+                  <column datatype='integer' name='n_steps' ordinal='5' />
+                  <column datatype='string' name='steps' ordinal='6' />
+                  <column datatype='string' name='description' ordinal='7' />
+                  <column datatype='string' name='ingredients' ordinal='8' />
+                  <column datatype='integer' name='n_ingredients' ordinal='9' />
+                  <column datatype='string' name='average_rating' ordinal='10' />
+                  <column datatype='integer' name='number_of_ratings' ordinal='11' />
+                  <column datatype='string' name='url' ordinal='12' />
+                  <column datatype='string' name='cooking_time' ordinal='13' />
+                  <column datatype='string' name='ingredient_group' ordinal='14' />
+                  <column datatype='string' name='weighted_rating' ordinal='15' />
+                  <column datatype='string' name='restrictions' ordinal='16' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <actions brushing-enabled='false'>
+    <action caption='Highlight 1 (generated)' name='[Action1_7A6447E122B944EA84B9B5562B67D939]'>
+      <activation auto-clear='true' type='on-select' />
+      <source type='sheet' worksheet='Total Recipes' />
+      <command command='tsc:brush'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Total Recipes' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df_recipes_final' name='federated.1y9mjah03tbdu31ghk22h1veqf68' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1y9mjah03tbdu31ghk22h1veqf68'>
+            <column-instance column='[name]' derivation='Count' name='[cnt:name:qk]' pivot='key' type='quantitative' />
+            <column caption='Cooking Time' datatype='string' name='[cooking_time]' role='dimension' type='nominal' />
+            <column caption='Minutes' datatype='integer' name='[minutes]' role='measure' type='ordinal' />
+            <column caption='Name' datatype='string' name='[name]' role='dimension' type='nominal' />
+            <column-instance column='[cooking_time]' derivation='None' name='[none:cooking_time:nk]' pivot='key' type='nominal' />
+            <column-instance column='[minutes]' derivation='None' name='[none:minutes:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1y9mjah03tbdu31ghk22h1veqf68].[none:minutes:ok]'>
+            <groupfilter from='0' function='range' level='[none:minutes:ok]' to='10105' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1y9mjah03tbdu31ghk22h1veqf68].[none:minutes:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.1y9mjah03tbdu31ghk22h1veqf68].[cnt:name:qk]</rows>
+        <cols>[federated.1y9mjah03tbdu31ghk22h1veqf68].[none:cooking_time:nk]</cols>
+        <show-full-range>
+          <column>[federated.1y9mjah03tbdu31ghk22h1veqf68].[Minutes (bin)]</column>
+        </show-full-range>
+      </table>
+      <simple-id uuid='{D4ECDCEE-87D8-4455-9008-4938A483F753}' />
+    </worksheet>
+    <worksheet name='Total Recipes'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df_recipes_final' name='federated.1y9mjah03tbdu31ghk22h1veqf68' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1y9mjah03tbdu31ghk22h1veqf68'>
+            <column-instance column='[recipe_id]' derivation='Count' name='[cnt:recipe_id:qk]' pivot='key' type='quantitative' />
+            <column caption='Recipe Id' datatype='integer' name='[recipe_id]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.1y9mjah03tbdu31ghk22h1veqf68].[cnt:recipe_id:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{33CEDE0D-9E94-47FA-AD26-0539EA03FD3A}' />
+    </worksheet>
+    <worksheet name='Total Restrictions'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df_recipes_final' name='federated.1y9mjah03tbdu31ghk22h1veqf68' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1y9mjah03tbdu31ghk22h1veqf68'>
+            <column caption='Nuts' datatype='integer' name='[Calculation_1975954366740742148]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF CONTAINS([restrictions],&apos;Nuts&apos;) Then 1 ELSE 0 END' />
+            </column>
+            <column caption='Nuts-Free' datatype='integer' name='[Calculation_3780490442486591494]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='if [Calculation_1975954366740742148] == 1 Then 1 else 0 END' />
+            </column>
+            <column caption='Restrictions' datatype='string' name='[restrictions]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_3780490442486591494]' derivation='Sum' name='[sum:Calculation_3780490442486591494:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.1y9mjah03tbdu31ghk22h1veqf68].[sum:Calculation_3780490442486591494:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{EE3C79EE-6CEB-4481-BE77-86CE34AD25B6}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='240'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='48'>
+            <card type='columns' />
+          </strip>
+          <strip size='48'>
+            <card type='rows' />
+          </strip>
+          <strip size='45'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{8C2406F9-F444-4A24-AAC2-9B8AC8CCF85D}' />
+    </window>
+    <window class='worksheet' name='Total Recipes'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{8A165F55-29B5-4BB5-A239-DE057868898D}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Total Restrictions'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='0'>
+            <card pane-specification-id='1' param='[federated.1y9mjah03tbdu31ghk22h1veqf68].[sum:Calculation_3780490442486591494:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='fit-width' />
+      </viewpoint>
+      <simple-id uuid='{88493127-92A4-4C3A-B89B-493D797EA011}' />
+    </window>
+  </windows>
+</workbook>
