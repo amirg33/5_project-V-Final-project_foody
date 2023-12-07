@@ -121,3 +121,15 @@ def split_and_save_df(df, file_path, part_size):
 
     df_part1.to_csv(f"{file_path}_part1.csv", index=False)
     df_part2.to_csv(f"{file_path}_part2.csv", index=False)
+
+def rating_to_stars(rating):
+    if rating >= 4.5:
+        return "⭐⭐⭐⭐⭐"  # 5 stars
+    elif rating >= 3.7:
+        return "⭐⭐⭐⭐"   # 4 stars
+    elif rating >= 2.9:
+        return "⭐⭐⭐"    # 3 stars
+    elif rating >= 2.1:
+        return "⭐⭐"     # 2 stars
+    else:
+        return "⭐"      # 1 star

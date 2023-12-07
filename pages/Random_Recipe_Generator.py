@@ -132,3 +132,5 @@ if st.button('Choose Random Recipe'):
                 st.write(f"#{tag}")
 
         col2.markdown(f"For more information and pictures about the Recipe, visit this [LINK]({url})")
+        star_rating = ut.rating_to_stars(row['weighted_rating'])
+        col2.markdown(f"**Rating:** {star_rating}")

@@ -9,6 +9,7 @@
     <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
     <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
     <SheetIdentifierTracking />
+    <SortTagCleanup />
     <WindowsPersistSimpleIdentifiers />
   </document-format-change-manifest>
   <preferences>
@@ -494,6 +495,11 @@
               <breakdown value='auto' />
             </view>
             <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#f28e2b' />
+              </style-rule>
+            </style>
           </pane>
         </panes>
         <rows>[federated.1y9mjah03tbdu31ghk22h1veqf68].[cnt:name:qk]</rows>
@@ -545,15 +551,65 @@
             <datasource caption='df_recipes_final' name='federated.1y9mjah03tbdu31ghk22h1veqf68' />
           </datasources>
           <datasource-dependencies datasource='federated.1y9mjah03tbdu31ghk22h1veqf68'>
+            <column caption='Dairy' datatype='integer' name='[Calculation_1975954366738845696]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF CONTAINS([restrictions],&apos;Dairy&apos;) Then 1 ELSE 0 END' />
+            </column>
+            <column caption='Gluten' datatype='integer' name='[Calculation_1975954366740512769]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF CONTAINS([restrictions],&apos;Gluten&apos;) Then 1 ELSE 0 END' />
+            </column>
+            <column caption='Vegan' datatype='integer' name='[Calculation_1975954366740598786]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF CONTAINS([restrictions],&apos;Vegan&apos;) Then 1 ELSE 0 END' />
+            </column>
+            <column caption='Vegetarian' datatype='integer' name='[Calculation_1975954366740656131]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF CONTAINS([restrictions],&apos;Vegetarian&apos;) Then 1 ELSE 0 END' />
+            </column>
             <column caption='Nuts' datatype='integer' name='[Calculation_1975954366740742148]' role='measure' type='quantitative'>
               <calculation class='tableau' formula='IF CONTAINS([restrictions],&apos;Nuts&apos;) Then 1 ELSE 0 END' />
+            </column>
+            <column caption='Dairy-Free' datatype='integer' name='[Calculation_3780490442484736003]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Calculation_1975954366738845696] == 1 THEN 1 ELSE 0 END' />
+            </column>
+            <column caption='Gluten-Free' datatype='integer' name='[Calculation_3780490442485432325]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Calculation_1975954366740512769] == 1 THEN 1 ELSE 0 END' />
             </column>
             <column caption='Nuts-Free' datatype='integer' name='[Calculation_3780490442486591494]' role='measure' type='quantitative'>
               <calculation class='tableau' formula='if [Calculation_1975954366740742148] == 1 Then 1 else 0 END' />
             </column>
+            <column caption='Vegetarian ' datatype='integer' name='[Calculation_3780490442486861831]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='if [Calculation_1975954366740656131] == 1 Then 1 else 0 END' />
+            </column>
+            <column caption='Vegan ' datatype='integer' name='[Calculation_3780490442487025672]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='if [Calculation_1975954366740598786] == 1 Then 1 else 0 END' />
+            </column>
+            <column-instance column='[restrictions]' derivation='None' name='[none:restrictions:nk]' pivot='key' type='nominal' />
             <column caption='Restrictions' datatype='string' name='[restrictions]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_3780490442484736003]' derivation='Sum' name='[sum:Calculation_3780490442484736003:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_3780490442485432325]' derivation='Sum' name='[sum:Calculation_3780490442485432325:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Calculation_3780490442486591494]' derivation='Sum' name='[sum:Calculation_3780490442486591494:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_3780490442486861831]' derivation='Sum' name='[sum:Calculation_3780490442486861831:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_3780490442487025672]' derivation='Sum' name='[sum:Calculation_3780490442487025672:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
+          <filter class='categorical' column='[federated.1y9mjah03tbdu31ghk22h1veqf68].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1y9mjah03tbdu31ghk22h1veqf68].[sum:Calculation_3780490442484736003:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1y9mjah03tbdu31ghk22h1veqf68].[sum:Calculation_3780490442485432325:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1y9mjah03tbdu31ghk22h1veqf68].[sum:Calculation_3780490442486861831:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1y9mjah03tbdu31ghk22h1veqf68].[sum:Calculation_3780490442487025672:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1y9mjah03tbdu31ghk22h1veqf68].[sum:Calculation_3780490442486591494:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.1y9mjah03tbdu31ghk22h1veqf68].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.1y9mjah03tbdu31ghk22h1veqf68].[sum:Calculation_3780490442484736003:qk]&quot;</bucket>
+              <bucket>&quot;[federated.1y9mjah03tbdu31ghk22h1veqf68].[sum:Calculation_3780490442485432325:qk]&quot;</bucket>
+              <bucket>&quot;[federated.1y9mjah03tbdu31ghk22h1veqf68].[sum:Calculation_3780490442486861831:qk]&quot;</bucket>
+              <bucket>&quot;[federated.1y9mjah03tbdu31ghk22h1veqf68].[sum:Calculation_3780490442487025672:qk]&quot;</bucket>
+              <bucket>&quot;[federated.1y9mjah03tbdu31ghk22h1veqf68].[sum:Calculation_3780490442486591494:qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <slices>
+            <column>[federated.1y9mjah03tbdu31ghk22h1veqf68].[:Measure Names]</column>
+          </slices>
           <aggregation value='true' />
         </view>
         <style />
@@ -564,18 +620,18 @@
             </view>
             <mark class='Bar' />
             <encodings>
-              <color column='[federated.1y9mjah03tbdu31ghk22h1veqf68].[sum:Calculation_3780490442486591494:qk]' />
+              <color column='[federated.1y9mjah03tbdu31ghk22h1veqf68].[none:restrictions:nk]' />
             </encodings>
           </pane>
         </panes>
-        <rows />
-        <cols />
+        <rows>[federated.1y9mjah03tbdu31ghk22h1veqf68].[Multiple Values]</rows>
+        <cols>[federated.1y9mjah03tbdu31ghk22h1veqf68].[:Measure Names]</cols>
       </table>
       <simple-id uuid='{EE3C79EE-6CEB-4481-BE77-86CE34AD25B6}' />
     </worksheet>
   </worksheets>
   <windows source-height='30'>
-    <window class='worksheet' name='Sheet 1'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
       <cards>
         <edge name='left'>
           <strip size='240'>
@@ -585,10 +641,10 @@
           </strip>
         </edge>
         <edge name='top'>
-          <strip size='48'>
+          <strip size='2147483647'>
             <card type='columns' />
           </strip>
-          <strip size='48'>
+          <strip size='2147483647'>
             <card type='rows' />
           </strip>
           <strip size='45'>
@@ -624,13 +680,14 @@
       </cards>
       <simple-id uuid='{8A165F55-29B5-4BB5-A239-DE057868898D}' />
     </window>
-    <window class='worksheet' maximized='true' name='Total Restrictions'>
+    <window class='worksheet' name='Total Restrictions'>
       <cards>
         <edge name='left'>
           <strip size='160'>
             <card type='pages' />
             <card type='filters' />
             <card type='marks' />
+            <card type='measures' />
           </strip>
         </edge>
         <edge name='top'>
@@ -645,8 +702,8 @@
           </strip>
         </edge>
         <edge name='right'>
-          <strip size='0'>
-            <card pane-specification-id='1' param='[federated.1y9mjah03tbdu31ghk22h1veqf68].[sum:Calculation_3780490442486591494:qk]' type='color' />
+          <strip size='160'>
+            <card pane-specification-id='1' param='[federated.1y9mjah03tbdu31ghk22h1veqf68].[none:restrictions:nk]' type='color' />
           </strip>
         </edge>
       </cards>
